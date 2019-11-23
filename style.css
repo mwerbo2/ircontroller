@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 24em;
+    justify-content: center;
+}
+.action-container {
+    margin: 30px;
+    max-width: 50%;
+ 
+}
+
+.action-bottom {
+    align-self: flex-start;
+}
+
+.action-button {
+    padding: 40px 40px;
+    border-radius: 20px;
+    font-size: 2em;
+    background-color: blue;
+    color: white;
+    font-family: "Helvetica Neue";
+    width: 500px;
+}
+
+.end {
+    padding: 20px 20px;
+    border-radius: 20px;
+    font-size: 2em;
+    background-color: red;
+    color: white;
+    font-family: "Helvetica Neue";
+    width: 250px;
+}
