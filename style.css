@@ -11,7 +11,7 @@ body {
 }
 .action-container {
     margin: 30px;
-    max-width: 50%;
+    max-width: 90%;
  
 }
 
@@ -20,14 +20,16 @@ body {
 }
 
 .action-button {
-    padding: 40px 40px;
+    height: 90px;
+    width: 90px;
+    /* padding: 40px 40px;
     border: 1px solid black;
     border-radius: 20px;
     font-size: 2em;
     background-color: blue;
     color: white;
     font-family: "Helvetica Neue";
-    width: 500px;
+    width: 500px; */
 }
 
 .end {

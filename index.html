@@ -12,25 +12,32 @@
 </head>
 
 <body>
-
+  <!-- Header -->
   <div class="navbar navbar-fixed-bottom">
-    <i class="fas fa-home"></i>
+    <i class="fas fa-home fa-4x"></i>
   </div>
+  <!-- Bod -->
   <div class="container">
     <div class="action-container">
-      <button id="connect-hdmi" class="action-button">Connect via HDMI</button>
+      <div id="connect-hdmi">
+
+      </div>
+      <!-- <button id="connect-hdmi" class="action-button">Connect via HDMI</button> -->
+      </divid>
+      <div style="height: 80%; width: 80%; background-color: grey;" class="action-container">
+        <i class="fab fa-chromecast fa-inverse fa-4x"></i>
+        <span style="color: white">Chromecast</span>
+        <!-- <button id="connect-chromecast" class="action-button">Connect via Chromecast</button> -->
+      </div>
+      <div class="action-bottom">
+        <button class="end">Off</button>
+      </div>
     </div>
-    <div class="action-container">
-      <button id="connect-chromecast" class="action-button">Connect via Chromecast</button>
+    <!-- Footer -->
+    <div class="adjustment-containe">
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
     </div>
-    <div class="action-bottom">
-      <button class="end">Off</button>
-    </div>
-  </div>
-  <div class="adjustment-containe">
-    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  </div>
-  <div class="navbar navbar-fixed-bottom"></div>
+    <div class="navbar navbar-fixed-bottom"></div>
 </body>
 
 </html>
