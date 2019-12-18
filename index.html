@@ -5,39 +5,64 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  
   <script src="script.js"></script>
 </head>
 
 <body>
   <!-- Header -->
-  <div class="navbar navbar-fixed-bottom">
-    <i class="fas fa-home fa-4x"></i>
-  </div>
-  <!-- Bod -->
   <div class="container">
-    <div class="action-container">
-      <div id="connect-hdmi">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <h1 id="header-title" style="text-align: center;">Home</h1>
+      </div>
+      <div class="col-sm-4">
+        <h2 id="header-time" style="text-align: center;">3:45 PM</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"></div>
+      <div class="col-sm-6"></div>
+    </div>
 
+      <!-- Bod -->
+
+      <div class="row">
+        <div class="col-sm-6"><button id="connect-hdmi" class="action-button">HDMI</button></div>
+        <div class="col-sm-6">      <i class="fab fa-chromecast fa-4x"></i>
+          <span style="color: grey">Chromecast</span></div>
       </div>
-      <!-- <button id="connect-hdmi" class="action-button">Connect via HDMI</button> -->
-      </divid>
-      <div style="height: 80%; width: 80%; background-color: grey;" class="action-container">
-        <i class="fab fa-chromecast fa-inverse fa-4x"></i>
-        <span style="color: white">Chromecast</span>
-        <!-- <button id="connect-chromecast" class="action-button">Connect via Chromecast</button> -->
+    
+      
       </div>
-      <div class="action-bottom">
-        <button class="end">Off</button>
-      </div>
+    
     </div>
+  
+  
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><i style="text-align: center;" style="color:black;" class="fas fa-power-off fa-3x"></i></div>
+      </div>
+      
+      
+    </div>
+  </footer>
+  
+
     <!-- Footer -->
-    <div class="adjustment-containe">
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-    </div>
-    <div class="navbar navbar-fixed-bottom"></div>
+    <!-- <div class="adjustment-containe"> -->
+      <!-- <input type="range" min="1" max="100" value="50" class="slider" id="myRange"> -->
+    <!-- </div> -->
+    <!-- <div class="navbar navbar-fixed-bottom"></div> -->
 <!-- Second Page -->
 
 </body>
