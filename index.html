@@ -7,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -17,79 +16,74 @@
   <!-- Header -->
   <div style="height: 100%" class="container-fluid">
     <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <h1 id="header-title" style="text-align: center;">Home</h1>
+      <div id="error_container" class="col-sm-4">
+        <h2 id="error_message"></h2>
       </div>
       <div class="col-sm-4">
-        <h2 id="header_time" style="text-align: center;"></h2>
+        <h1 id="header_title">Home</h1>
+      </div>
+      <div class="col-sm-4">
+        <h2 id="header_time"></h2>
       </div>
     </div>
-
-
-      <!-- Home -->
-      <div class="d-flex flex-wrap justify-content-around" id="home">
+    <!-- Home -->
+    <div id='home'>
+      <div class="d-flex flex-wrap justify-content-around">
         <div class="col-sm-3"></div>
         <div style="text-align: center;"  class="col-sm-3">
-          <div class="align-middle shadow p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px;  margin: 0 auto" id="hdmi">
-            <img src="https://img.icons8.com/ios-glyphs/80/000000/hdmi-cable.png">
+          <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px;  margin: 0 auto">
+            <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
             <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI</h2>
-            <i class="fas fa-check"></i>
+            <!-- <i class="fas fa-check fa-2x" style="color: green"></i> -->
           </div>
         </div>
         <div style="text-align: center;" class="col-sm-3">
-          <div class="shadow p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto;" id="chromecast">
+          <div id="chromecast_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto;">
             <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
             <h2 style="color: black; text-align: center; vertical-align: bottom;">Chromecast</h2>
           </div>
         </div>
         <div class="col-sm-3"></div>
       </div>
-        <!-- Chromecast -->
-        <div class="com-sm-12 chromecast" style="height: 120px; width: 120px; margin: 0 auto;">
-          <i class="fab fa-chromecast fa-6x"></i>
-          <h2 style="color: black; text-align: center; vertical-align: bottom;">Chromecast</h2>
+    </div>
+    <!-- Chromecast -->
+    <div id="chromecast_display" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;">
+      <i class="fab fa-chromecast fa-6x"></i>
+      <h2 style="color: black; text-align: center; vertical-align: bottom;">Chromecast</h2>
+    </div>
+    <!-- HDMI -->
+    <div id="hdmi_display">
+      <div class="d-flex flex-wrap justify-content-around">
+        <div class="col-sm-3"></div>
+        <div id="hdmi1" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;"> 
+          <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
+          <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI 1</h2>
         </div>
-        <!-- HDMI -->
-        <div style="text-align: center;"  class="col-sm-6 hdmi1">
-          <div class="align-middle" style="height: 120px; width: 120px;  margin: 0 auto">
-            <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI 1</h2>
-          </div>
-        </div>
-        <div style="text-align: center;" class="col-sm-6 hdmi2"> 
-          <div style="height: 120px; width: 120px; margin: 0 auto;" >
+        <div style="text-align: center;" class="col-sm-3"> 
+          <div id="hdmi2" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;">
             <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
             <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI 2</h2>
           </div>
         </div>
-
+        <div class="col-sm-3"></div>
+      </div>
     </div>
-  </div> 
-<!-- Footer -->
+  </div>
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="row">
         <div style="text-align: center;" id="home_button"  class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
         <div style="text-align: center;"  class="col-sm-4">
-          
             <!-- <i class="fa fa-volume-down fa-2x"></i> -->
             <div id="volume">
               <input type="range" class="custom-range" id="customRange1">
             </div>
-            
             <!-- <i class="fa fa-volume-up fa-2x"></i> -->
         </div>
         <div style="text-align: center;" id="power_button" class="col-sm-4"><i style="text-align: center;" style="color:black;" class="fas fa-power-off fa-3x"></i></div>
       </div>
     </div>
   </footer>
-  
-
-    
-    
-<!-- Second Page -->
-
 </body>
-
 </html>

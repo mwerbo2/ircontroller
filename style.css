@@ -3,13 +3,16 @@ html, body {
     height: 100%;
 }
 
+h1, h2 {
+    text-align: center;
+}
 
-.chromecast {
+#chromecast_display {
     display: none;
 }
 
-.hdmi1, .hdmi2 {
-display: none;
+#hdmi_display {
+    display: none;
 }
 
 .footer {
