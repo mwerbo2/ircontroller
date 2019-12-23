@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title></title>
+  <title>Theatre Controller</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 
 <body>
   <!-- Header -->
-  <div style="height: 100%" class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <div id="error_container" class="col-sm-4">
         <h2 id="error_message"></h2>
@@ -30,39 +30,39 @@
     <div id='home'>
       <div class="d-flex flex-wrap justify-content-around">
         <div class="col-sm-3"></div>
-        <div style="text-align: center;"  class="col-sm-3">
-          <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px;  margin: 0 auto">
+        <div class="col-sm-3">
+          <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button">
             <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI</h2>
+            <h2 class='button_title'>HDMI</h2>
             <!-- <i class="fas fa-check fa-2x" style="color: green"></i> -->
           </div>
         </div>
-        <div style="text-align: center;" class="col-sm-3">
-          <div id="chromecast_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto;">
+        <div class="col-sm-3">
+          <div id="chromecast_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button">
             <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
-            <h2 style="color: black; text-align: center; vertical-align: bottom;">Chromecast</h2>
+            <h2 class='button_title'>Chromecast</h2>
           </div>
         </div>
         <div class="col-sm-3"></div>
       </div>
     </div>
     <!-- Chromecast -->
-    <div id="chromecast_display" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;">
+    <div id="chromecast_display" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
       <i class="fab fa-chromecast fa-6x"></i>
-      <h2 style="color: black; text-align: center; vertical-align: bottom;">Chromecast</h2>
+      <h2 class='button_title'>Chromecast</h2>
     </div>
     <!-- HDMI -->
     <div id="hdmi_display">
       <div class="d-flex flex-wrap justify-content-around">
         <div class="col-sm-3"></div>
-        <div id="hdmi1" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;"> 
+        <div id="hdmi1" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button"> 
           <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-          <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI 1</h2>
+          <h2 class='button_title'>HDMI 1</h2>
         </div>
-        <div style="text-align: center;" class="col-sm-3"> 
-          <div id="hdmi2" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded" style="height: 180px; width: 220px; margin: 0 auto; text-align: center;">
+        <div class="col-sm-3"> 
+          <div id="hdmi2" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
             <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 style="color: black; text-align: center; vertical-align: bottom;">HDMI 2</h2>
+            <h2 class='button_title'>HDMI 2</h2>
           </div>
         </div>
         <div class="col-sm-3"></div>
@@ -73,15 +73,15 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div style="text-align: center;" id="home_button"  class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
-        <div style="text-align: center;"  class="col-sm-4">
+        <div id="home_button" class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
+        <div class="col-sm-4">
             <!-- <i class="fa fa-volume-down fa-2x"></i> -->
             <div id="volume">
-              <input type="range" class="custom-range" id="customRange1">
+              <input id="customRange1" type="range" class="custom-range">
             </div>
             <!-- <i class="fa fa-volume-up fa-2x"></i> -->
         </div>
-        <div style="text-align: center;" id="power_button" class="col-sm-4"><i style="text-align: center;" style="color:black;" class="fas fa-power-off fa-3x"></i></div>
+        <div id="power_button" class="col-sm-4"><i class="fas fa-power-off fa-3x"></i></div>
       </div>
     </div>
   </footer>
