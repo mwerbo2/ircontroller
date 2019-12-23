@@ -27,32 +27,35 @@ ready(function () {
   // Update clock
   setInterval(() => setTime(), 60000);
 
+// SET html elements on page
+  updateDom = (selector, field, modifier, value) => {
+    field !== "style" ? document.getElementById(selector)[modifier] = value : document.getElementById(selector).style[modifier] = value
+  }
+
   // Logging of error and info messages 
   showMessage = (level, msg) => {
     if (level === "error") {
-      document.getElementById('error_container').style.border = "4px red solid"
+      updateDom('error_container', 'style', 'border', '4px red solid');
       document.getElementById('error_message').innerHTML = `&#9888 ${msg}`;
       setTimeout(() => {
-        document.getElementById('error_message').innerText = ""
-        document.getElementById('error_container').style.border = ""
+        updateDom('error_message', null, 'innerHTML', "")
+        updateDom('error_container', 'style', 'border', "")
       }, 5000);
     } else {
-      document.getElementById('error_container').style.border = "4px green solid"
-      document.getElementById('error_message').innerHTML = msg;
+      updateDom('error_container', 'style', 'border', '4px green solid');
+      updateDom('error_message', null, 'innerHTML', msg);
       setTimeout(() => {
-        document.getElementById('error_message').innerText = ""
-        document.getElementById('error_container').style.border = ""
+        updateDom('error_message', null, 'innerHTML', "")
+        updateDom('error_container', 'style', 'border', "")
       }, 5000);
     }
   }
 
-  
-
 // Connect via HDMI
   document.getElementById('hdmi_button').addEventListener('click', async () => {
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('hdmi_display').style.display = 'block';
-    document.getElementById('header_title').innerHTML = "HDMI"
+    updateDom('home', 'style', 'display', 'none')
+    updateDom('hdmi_display', 'style', 'display', 'block')
+    updateDom('header_title', null, 'innerHTML', "HDMI")
 
     const projectorOn = await axios.post('api/v1/irports/1/senddi', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
     if (projectorOn.status !== 200) {
@@ -63,7 +66,6 @@ ready(function () {
     if (receiverOn.status !== 200) {
       showMessage("error", "Error turning on receiver")
     }
-    
     showMessage('info', "Projector is on")
   })
 
@@ -71,29 +73,33 @@ ready(function () {
   document.getElementById('hdmi1').addEventListener('click', async () => {
     
   })
+
   // Event handler for hdmi2
   document.getElementById('hdmi2').addEventListener('click', async () => {
     
   })
+
   // Connect to chromecast
   document.getElementById('chromecast_button').addEventListener('click', () => {
-    document.getElementById('header_title').innerHTML = "Chromecast"
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('chromecast_display').style.display = 'block';  
+    updateDom('header_title', null, 'innerHTML', 'Chromecast')
+    updateDom('home', 'style', 'display', 'none')
+    updateDom('chromecast_display', 'style', 'display', 'block')
   })
+
   // Go back home
   document.getElementById('home_button').addEventListener('click', () => {
-    document.getElementById('header_title').innerHTML = "Home"
-    document.getElementById('chromecast_display').style.display = 'none';
-    document.getElementById('hdmi_display').style.display = 'none';
-    document.getElementById('home').style.display = 'block';
+    updateDom('header_title', null, 'innerHTML', 'Home');
+    updateDom('chromecast_display', 'style', 'display', 'none')
+    updateDom('hdmi_display', 'style', 'display', 'none');
+    updateDom('home', 'style', 'display', 'block')
   })
+
   // Power down projector and unit
   document.getElementById('power_button').addEventListener('click', () => {
     showMessage("info", "Powering down")
-    document.getElementById('header_title').innerHTML = "Home"
-    document.getElementById('chromecast_display').style.display = 'none';
-    document.getElementById('hdmi_display').style.display = 'none';
-    document.getElementById('home').style.display = 'block';
+    updateDom('header_title', null, 'innerHTML', 'Home');
+    updateDom('chromecast_display', 'style', 'display', 'none')
+    updateDom('hdmi_display', 'style', 'display', 'none');
+    updateDom('home', 'style', 'display', 'block')
   })
 });
