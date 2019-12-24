@@ -21,12 +21,8 @@ h1, h2 {
     display: none;
 }
 
-#power_on {
-    display: block;
-}
-
 #power_off {
-    display: none;
+    display: block;
 }
 
 #header_title {
@@ -52,12 +48,18 @@ h1, h2 {
 #hdmi_display {
     display: none;
 }
-
+.Aligner-item {
+    text-align: center;
+    vertical-align: middle;
+    height: 120px;
+    width: 120px;
+    flex: 1;
+}
 #home {
     display: flex;
+    min-height: 22em;
     align-items: center;
     justify-content: center;
-    display: none;
     text-align: center; 
 }
 

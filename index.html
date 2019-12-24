@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
   <script src="script.js"></script>
 </head>
 
@@ -17,7 +17,7 @@
   <div class="container-fluid">
     <div class="row">
       <div id="logo_container" class="col-sm-4">
-        <img id="logo" src="/Users/michaelwerbowsky/Downloads/SheridanPoint_Logo_Transparent_For_Web.png">
+        <img id="logo" src="https://i.imgur.com/DOfFbPM.png">
         <!-- <h2 id="error_message"></h2> -->
       </div>
       <div class="col-sm-4">
@@ -29,47 +29,37 @@
     </div>
     <!-- Home -->
     <div id='home'>
-      <div class="row d-flex flex-wrap justify-content-around h-100" style="align-items: center; justify-content: center; min-height: 2em;">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-          <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
-            <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 class='button_title'>HDMI</h2>
-            <!-- <i class="fas fa-check fa-2x" style="color: green"></i> -->
-          </div>
+      <div class="Aligner-item">
+        <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
+          <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
+          <h2 class='button_title'>HDMI</h2>
         </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2"> 
-          <div id="chromecast_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
-            <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
-            <h2 class='button_title'>Chromecast</h2>
-          </div>
+      </div>
+      <div id="chromecast_button" class="Aligner-item">
+        <div class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
+          <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
+          <h2 class='button_title'>Chromecast</h2>
         </div>
-        <div class="col-sm-2"></div>
+      </div>
       </div>
     </div>
     <!-- Chromecast -->
-    <div id="chromecast_display" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
+    <div id="chromecast_display" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
       <i class="fab fa-chromecast fa-6x"></i>
       <h2 class='button_title'>Chromecast</h2>
-    </div>
-    <!-- Power on button -->
-    <div id="power_on" class="com-sm-12 input_button">
-      <i class="fas fa-power-off fa-5x"></i>      
     </div>
     <!-- HDMI -->
     <div id="hdmi_display">
       <div class="d-flex flex-wrap justify-content-around">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">
-          <div id="hdmi1" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button"> 
+          <div id="hdmi1" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button"> 
             <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
             <h2 class='button_title'>HDMI 1</h2>
           </div>
         </div>
         <div class="col-sm-3"> 
-          <div id="hdmi2" class="com-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
+          <div id="hdmi2" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
             <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
             <h2 class='button_title'>HDMI 2</h2>
           </div>
@@ -90,7 +80,7 @@
             </div>
             <!-- <i class="fa fa-volume-up fa-2x"></i> -->
         </div>
-        <div id="power_off" class="col-sm-4"><i class="fas fa-power-off fa-3x"></i></div>
+        <div id="power_off" class="col-sm-4"><h1 id="power_title">Power Off</h1></div>
       </div>
     </div>
   </footer>
