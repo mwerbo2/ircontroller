@@ -6,6 +6,32 @@ html, body {
 h1, h2 {
     text-align: center;
 }
+#logo_container {
+    margin: 0 auto;
+}
+ #logo {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+     height: 100px;
+     width: 100px;
+ }
+
+#home_button, #volume{
+    display: none;
+}
+
+#power_on {
+    display: block;
+}
+
+#power_off {
+    display: none;
+}
+
+#header_title {
+    display: none;
+}
 
 .input_button {
     height: 180px; 
@@ -28,6 +54,10 @@ h1, h2 {
 }
 
 #home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
     text-align: center; 
 }
 

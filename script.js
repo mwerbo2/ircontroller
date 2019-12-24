@@ -16,8 +16,10 @@ function ready(callbackFunc) {
   }
 }
 
-
 ready(function () {
+ let state = {
+    power: 'off'
+  }
   
   // Display clock
   setTime = () => {
@@ -57,6 +59,7 @@ ready(function () {
     updateDom('home', 'style', 'display', 'none');
     updateDom('hdmi_display', 'style', 'display', 'block');
     updateDom('header_title', null, 'innerHTML', "HDMI");
+    
 
     const projectorOn = await axios.post('api/v1/irports/1/senddi', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
     if (projectorOn.status !== 200) {
@@ -95,12 +98,33 @@ ready(function () {
     updateDom('home', 'style', 'display', 'block');
   })
 
-  // Power down projector and unit
-  document.getElementById('power_button').addEventListener('click', () => {
-    showMessage("info", "Powering down");
+  document.getElementById('power_on').addEventListener('click', () => {
+    state.power = 'on'
+    updateDom('power_on', 'style', 'display', 'none')
+    updateDom('header_title', 'style', 'display', 'block')
+    updateDom('power_off', 'style', 'display', 'block')
     updateDom('header_title', null, 'innerHTML', 'Home');
     updateDom('chromecast_display', 'style', 'display', 'none');
     updateDom('hdmi_display', 'style', 'display', 'none');
     updateDom('home', 'style', 'display', 'block');
+    updateDom('home_button', 'style', 'display', 'block')
+    updateDom('volume', 'style', 'display', 'block')
+    showMessage("info", "Powering On");
+  })
+
+
+  // Power down projector and unit
+  document.getElementById('power_off').addEventListener('click', () => {
+
+      updateDom('header_title', null, 'innerHTML', '');
+      updateDom('chromecast_display', 'style', 'display', 'none');
+      updateDom('hdmi_display', 'style', 'display', 'none');
+      updateDom('home', 'style', 'display', 'none');
+      updateDom('home_button', 'style', 'display', 'none')
+      updateDom('volume', 'style', 'display', 'none')
+      updateDom('power_on', 'style', 'display', 'block')
+      updateDom('power_off', 'style', 'display', 'none')
+      showMessage("info", "Powering Down");
+
   })
 });
