@@ -11,8 +11,8 @@ h1, h2 {
 }
  #logo {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
      height: 100px;
      width: 100px;
  }
@@ -57,7 +57,7 @@ h1, h2 {
 }
 #home {
     display: flex;
-    min-height: 22em;
+    min-height: 15em;
     align-items: center;
     justify-content: center;
     text-align: center; 

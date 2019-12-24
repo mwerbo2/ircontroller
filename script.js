@@ -58,11 +58,9 @@ ready(function () {
   document.getElementById('hdmi_button').addEventListener('click', async () => {
     updateDom('home', 'style', 'display', 'none');
     updateDom('hdmi_display', 'style', 'display', 'block');
-    updateDom('header_title', null, 'innerHTML', "HDMI");
     updateDom('home_button', 'style', 'display', 'block')
     updateDom('volume', 'style', 'display', 'block')
     updateDom('home_button', 'style', 'visibility', 'visible')
-
 
     const projectorOn = await axios.post('api/v1/irports/1/senddi', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
     if (projectorOn.status !== 200) {
@@ -88,7 +86,6 @@ ready(function () {
 
   // Connect to chromecast
   document.getElementById('chromecast_button').addEventListener('click', () => {
-    updateDom('header_title', null, 'innerHTML', 'Chromecast');
     updateDom('home', 'style', 'display', 'none');
     updateDom('chromecast_display', 'style', 'display', 'block');
     updateDom('home_button', 'style', 'display', 'block')
@@ -98,7 +95,6 @@ ready(function () {
 
   // Go back home
   document.getElementById('home_button').addEventListener('click', () => {
-    updateDom('header_title', null, 'innerHTML', 'Home');
     updateDom('chromecast_display', 'style', 'display', 'none');
     updateDom('hdmi_display', 'style', 'display', 'none');
     updateDom('home', 'style', 'display', 'flex');
@@ -109,9 +105,7 @@ ready(function () {
 
   // Power down projector and unit
   document.getElementById('power_off').addEventListener('click', () => {
-    
       state.power = 'off';
-      updateDom('header_title', null, 'innerHTML', '');
       updateDom('chromecast_display', 'style', 'display', 'none');
       updateDom('hdmi_display', 'style', 'display', 'none');
       updateDom('home', 'style', 'display', 'flex');
