@@ -13,76 +13,79 @@
 </head>
 
 <body>
+  <div id="img_background">
+    <div id="opacity_div">
   <!-- Header -->
-  <div class="container-fluid">
-    <div class="row">
-      <div id="logo_container" class="col-sm-4">
-        <img id="logo" src="https://i.imgur.com/DOfFbPM.png">
-        <!-- <h2 id="error_message"></h2> -->
-      </div>
-      <div id='error_container' class="col-sm-4">
-        <h1 id='error_message'></h1>
-      </div>
-      <div class="col-sm-4">
-        <h2 id="header_time"></h2>
-      </div>
-    </div>
-    <!-- Home -->
-    <div id='home'>
-      <div class="Aligner-item">
-        <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
-          <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-          <h2 class='button_title'>HDMI</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div id="logo_container" class="col-sm-4">
+            <h2 id="error_message"></h2>
+          </div>
+          <div id='error_container' class="col-sm-4">
+            <h1 id='error_message'></h1>  
+          </div>
+          <div class="col-sm-4">
+            <h2 id="header_time"></h2>
+          </div>
         </div>
-      </div>
-      <div id="chromecast_button" class="Aligner-item">
-        <div class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
-          <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
+        <!-- Home -->
+        <div id='home'>
+          <div class="Aligner-item">
+            <div id="hdmi_button" class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
+              <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
+              <h2 class='button_title'>HDMI</h2>
+            </div>
+          </div>
+          <div id="chromecast_button" class="Aligner-item">
+            <div class="align-middle shadow-sm p-3 mb-5 bg-white rounded input_button my-auto">
+              <img src="https://img.icons8.com/windows/80/000000/chromecast-cast-button.png">
+              <h2 class='button_title'>Chromecast</h2>
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- Chromecast -->
+        <div id="chromecast_display" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
+          <i class="fab fa-chromecast fa-6x"></i>
           <h2 class='button_title'>Chromecast</h2>
         </div>
-      </div>
-      </div>
-    </div>
-    <!-- Chromecast -->
-    <div id="chromecast_display" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
-      <i class="fab fa-chromecast fa-6x"></i>
-      <h2 class='button_title'>Chromecast</h2>
-    </div>
-    <!-- HDMI -->
-    <div id="hdmi_display">
-      <div class="d-flex flex-wrap justify-content-around">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-3">
-          <div id="hdmi1" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button"> 
-            <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 class='button_title'>HDMI 1</h2>
+        <!-- HDMI -->
+        <div id="hdmi_display">
+          <div class="d-flex flex-wrap justify-content-around">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+              <div id="hdmi1" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button"> 
+                <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
+                <h2 class='button_title'>HDMI 1</h2>
+              </div>
+            </div>
+            <div class="col-sm-3"> 
+              <div id="hdmi2" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
+                <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
+                <h2 class='button_title'>HDMI 2</h2>
+              </div>
+            </div>
+            <div class="col-sm-3"></div>
           </div>
         </div>
-        <div class="col-sm-3"> 
-          <div id="hdmi2" class="col-sm-12 shadow-sm p-3 mb-5 bg-white rounded input_button">
-            <img src="https://img.icons8.com/small/96/000000/hdmi-cable.png">
-            <h2 class='button_title'>HDMI 2</h2>
+      </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div id="home_button" class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
+            <div class="col-sm-4">
+                <!-- <i class="fa fa-volume-down fa-2x"></i> -->
+                <div id="volume">
+                  <input id="volume_slider" type="range" class="custom-range" min="0" max="100" step="10" value="50">
+                </div>
+                <!-- <i class="fa fa-volume-up fa-2x"></i> -->
+            </div>
+            <div id="power_off" class="col-sm-4"><h1 id="power_title">Power Off</h1></div>
           </div>
         </div>
-        <div class="col-sm-3"></div>
-      </div>
+      </footer>
     </div>
   </div>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div id="home_button" class="col-sm-4"><i class="fas fa-home fa-3x"></i></div>
-        <div class="col-sm-4">
-            <!-- <i class="fa fa-volume-down fa-2x"></i> -->
-            <div id="volume">
-              <input id="volume_slider" type="range" class="custom-range" min="0" max="100" step="10" value="50">
-            </div>
-            <!-- <i class="fa fa-volume-up fa-2x"></i> -->
-        </div>
-        <div id="power_off" class="col-sm-4"><h1 id="power_title">Power Off</h1></div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
