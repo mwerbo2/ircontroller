@@ -46,10 +46,13 @@ ready(function () {
       setTimeout(() => {
         updateDom('error_message', null, 'innerHTML', "");
         updateDom('error_container', 'style', 'border', "");
+        updateDom('exclamation_mark', 'style', 'display', 'block')
+
       }, 5000);
     } else {
-      updateDom('error_container', 'style', 'border', '4px green solid');
-      updateDom('error_message', null, 'innerHTML', msg);
+      // updateDom('error_container', 'style', 'border', '4px green solid');
+      // updateDom('check_mark', 'style', 'display', 'inline')
+      updateDom('error_message', null, 'innerText', msg);
       setTimeout(() => {
         updateDom('error_message', null, 'innerHTML', "");
         updateDom('error_container', 'style', 'border', "");
@@ -64,6 +67,7 @@ ready(function () {
     updateDom('home_button', 'style', 'display', 'block')
     updateDom('volume', 'style', 'display', 'block')
     updateDom('home_button', 'style', 'visibility', 'visible')
+    updateDom('power_off', 'style', 'display', 'block')
 
     const projectorOn = await axios.post('api/v1/irports/1/senddir', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
     if (projectorOn.status !== 200) {
@@ -127,21 +131,22 @@ const myFunction = async () => {
 
   // Connect to chromecast
   document.getElementById('chromecast_button').addEventListener('click', async () => {
-    const projectorOn = await axios.post('api/v1/irports/1/senddir', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
-    if (projectorOn.status !== 200) {
-      showMessage("error", "Error turning on projector");
-    } 
+    // const projectorOn = await axios.post('api/v1/irports/1/senddir', { "frequency": 35955, "irCode": "323,161,20,20,20,60,20,20,20,20,20,60,20,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,20,20,20,20,20,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,60,20,60,20,60,20,60,20,1436,322,80,20,3500", "preamble": "", "repeat": 1 })
+    // if (projectorOn.status !== 200) {
+    //   showMessage("error", "Error turning on projector");
+    // } 
 
-    const hdm13On = await axios.post('api/v1/irports/1/senddir', {"frequency":38186,"irCode":"342,170,22,21,22,63,22,21,22,63,22,63,22,63,22,63,22,21,22,63,22,21,22,63,22,21,22,21,22,21,22,21,22,63,22,63,22,21,22,63,22,63,22,21,22,21,22,63,22,21,22,21,22,63,22,21,22,21,22,63,22,63,22,21,22,21,22,1556,342,85,22,3800","preamble":"","repeat":1})
-    if (hdm13On.status !== 200) {
-      showMessage("error", "Error turning on receiver");
-    } 
+    // const hdm13On = await axios.post('api/v1/irports/1/senddir', {"frequency":38186,"irCode":"342,170,22,21,22,63,22,21,22,63,22,63,22,63,22,63,22,21,22,63,22,21,22,63,22,21,22,21,22,21,22,21,22,63,22,63,22,21,22,63,22,63,22,21,22,21,22,63,22,21,22,21,22,63,22,21,22,21,22,63,22,63,22,21,22,21,22,1556,342,85,22,3800","preamble":"","repeat":1})
+    // if (hdm13On.status !== 200) {
+    //   showMessage("error", "Error turning on receiver");
+    // } 
 
     updateDom('home', 'style', 'display', 'none');
     updateDom('chromecast_display', 'style', 'display', 'block');
     updateDom('home_button', 'style', 'display', 'block')
     updateDom('volume', 'style', 'display', 'block')
     updateDom('home_button', 'style', 'visibility', 'visible')
+    updateDom('power_off', 'style', 'display', 'block')
   })
 
   // Go back home
@@ -156,14 +161,16 @@ const myFunction = async () => {
 
   // Power off projector and receiver
   document.getElementById('power_off').addEventListener('click', async () => {
-    const projectorOff = await axios.post('api/v1/irports/1/senddir', {"frequency":35955,"irCode":"322,161,20,20,20,60,20,20,20,20,20,60,18,9651465,1,147,1,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,60,20,60,20,20,20,60,20,20,20,20,20,60,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,1435,322,80,20,3438,322,80,20,3500","preamble":"","repeat":2})
-    if (projectorOff.status !== 200) {
-      showMessage("error", "Error turning off projector");
-    } 
-    const receiverOff = await axios.post('api/v1/irports/2/senddir', {"frequency":38186,"irCode":"343,170,22,21,22,63,22,63,22,63,22,63,22,63,22,63,22,21,22,63,22,21,22,21,22,21,22,21,22,21,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,63,22,63,22,1514,342,85,22,3647,342,85,22,3800","preamble":"","repeat":1})
-    if (receiverOff.status !== 200) {
-      showMessage("error", "Error turning off receiver");
-    }
+
+    console.log("FWWWWWWWWW")
+    // const projectorOff = await axios.post('api/v1/irports/1/senddir', {"frequency":35955,"irCode":"322,161,20,20,20,60,20,20,20,20,20,60,18,9651465,1,147,1,60,20,20,20,20,20,60,20,20,20,60,20,60,20,20,20,20,20,60,20,60,20,20,20,60,20,60,20,60,20,20,20,60,20,20,20,20,20,60,20,20,20,20,20,20,20,60,20,20,20,60,20,60,20,1435,322,80,20,3438,322,80,20,3500","preamble":"","repeat":2})
+    // if (projectorOff.status !== 200) {
+    //   showMessage("error", "Error turning off projector");
+    // } 
+    // const receiverOff = await axios.post('api/v1/irports/2/senddir', {"frequency":38186,"irCode":"343,170,22,21,22,63,22,63,22,63,22,63,22,63,22,63,22,21,22,63,22,21,22,21,22,21,22,21,22,21,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,21,22,63,22,21,22,63,22,21,22,63,22,21,22,63,22,63,22,1514,342,85,22,3647,342,85,22,3800","preamble":"","repeat":1})
+    // if (receiverOff.status !== 200) {
+    //   showMessage("error", "Error turning off receiver");
+    // }
 
       state.power = 'off';
       updateDom('chromecast_display', 'style', 'display', 'none');
@@ -171,7 +178,7 @@ const myFunction = async () => {
       updateDom('home', 'style', 'display', 'flex');
       updateDom('home_button', 'style', 'display', 'none')
       updateDom('volume', 'style', 'display', 'none')
-      updateDom('power_off', 'style', 'display', 'block')
+      updateDom('power_off', 'style', 'display', 'none')
       showMessage("info", "Powering Off");
     
       // state.power = 'on'

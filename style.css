@@ -6,6 +6,14 @@ html, body {
 h1, h2 {
     text-align: center;
 }
+
+#check_mark {
+    display: none;
+}
+
+#exclamation_mark {
+    display: none;
+}
 #logo_container {
     margin: 0 auto;
 }
@@ -22,7 +30,7 @@ h1, h2 {
 }
 
 #power_off {
-    display: block;
+    display: none;
 }
 
 #header_title {
