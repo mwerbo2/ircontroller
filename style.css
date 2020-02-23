@@ -7,6 +7,11 @@ h1, h2 {
     text-align: center;
 }
 
+#chromecast_logo {
+    height: 96px;
+    width: 96px;
+}
+
 #error_container {
     display: none;
     min-width: 250px;

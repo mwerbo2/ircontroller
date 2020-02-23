@@ -137,7 +137,7 @@ ready(function () {
     } else {
       const volumeUpCall = await axios.post('api/v1/irports/2/senddir', {"frequency":38186,"irCode":"342,170,22,21,22,63,22,21,22,63,22,63,22,63,22,63,22,21,22,63,22,21,22,63,22,21,22,21,22,21,22,21,22,63,22,21,22,63,22,21,22,63,22,63,22,21,22,21,22,21,22,63,22,21,22,63,22,21,22,21,22,63,22,63,22,63,22,1514,342,85,22,3800","preamble":"","repeat": volumeInterval})
       if (volumeUpCall.status !== 200) {
-        showMessage("error", "Error increasing volumen");
+        showMessage("error", "Error increasing volume");
       }
     }
   }
